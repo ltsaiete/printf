@@ -46,7 +46,7 @@ int _printf(char *format, ...)
  * given a pointer to the character %
  * @format: where to start verifying the specifier
  *
- * Return - the specifier
+ * Return: the specifier
  */
 char *getSpecifier(char *format)
 {
@@ -61,6 +61,12 @@ char *getSpecifier(char *format)
 	return (specifier);
 }
 
+/**
+  * printArg - function that prints argument
+  * @specifier: the specifier to print
+  * @arglist: the list to be printed
+  * Return: nothing
+  */
 void printArg(char *specifier, va_list *arglist)
 {
 	if (!strcmp(specifier, "%c"))
