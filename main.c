@@ -12,8 +12,8 @@ int main(void)
 	k = 'O';
 
 
-	_printf("Printing a char: %c, %c, %c, %c, %c", c, h, i, j, k);
-	_printf("Printing a string: %s", s);
-	_printf("Print nothing %s", c);
+	_printf("Printing a char: %c, %c, %c, %c, %c\n", c, h, i, j, k);
+	_printf("Printing a string: %s\n", s);
+	_printf("Print nothing %s\n");
 	return (0);
 }

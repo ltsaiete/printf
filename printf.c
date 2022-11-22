@@ -1,9 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include <stddef.h>
 /**
  * _printf - prints a formatted string
  * @format: The format of the string to print
@@ -24,12 +21,12 @@ int _printf(const char *format, ...)
 		else
 		{
 			count++;
-			printSpecific(format[count], arglist);
+			if (format[count])
+				printSpecific(format[count], arglist);
 		}
 		count++;
 	}
 	va_end(arglist);
-	write(1, "\n", 1);
 	return (0);
 }
 
@@ -41,13 +38,17 @@ int _printf(const char *format, ...)
   */
 void printSpecific(char format, va_list list)
 {
+	char *s;
+
 	switch (format)
 	{
 		case 'c':
 			_putchar(va_arg(list, int));
 			break;
 		case 's':
-			puts(va_arg(list, char *));
+			s = va_arg(list, char *);
+			while (*s != '\0')
+				_putchar(*s), s++;
 			break;
 	}
 }
