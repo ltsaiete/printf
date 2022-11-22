@@ -6,6 +6,7 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 char *getSpecifier(char *format);
 void printArg(char *specifier, va_list *arglist);
+void printSpecific(char format, va_list list);
 /**
   * struct formats - structure that will hold the format
   * @t: the type of the formater

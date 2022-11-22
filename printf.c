@@ -13,35 +13,18 @@ int _printf(const char *format, ...)
 {
 	va_list arglist;
 	int count = 0, i;
-	char *specifier = NULL;
-	struct formats f = {'c', printChar};
-
 
 	va_start(arglist, format);
 	while (format[count] != '\0')
 	{
 		if (format[count] != '%')
 		{
-			/*write(1, &ch, 1);*/
 			_putchar(format[count]);
 		}
-		else if(format[count + 1] == f.t)
+		else
 		{
-			/*specifier = getSpecifier(&format[count]);
-			Handle the special character printing here
-			printArg(specifier, &arglist);
-			free(specifier);*/
 			count++;
-			/*switch(format[count])
-			{
-				case 'c':
-					_putchar(va_arg(arglist, int));
-					break;
-				case 's':
-					puts(va_arg(arglist, char *));
-					break;
-			}*/
-			f.f(arglist);
+			printSpecific(format[count], arglist);
 		}
 		count++;
 	}
@@ -51,38 +34,20 @@ int _printf(const char *format, ...)
 }
 
 /**
- * getSpecifier - identifies the specifier to be formatted,
- * given a pointer to the character %
- * @format: where to start verifying the specifier
- *
- * Return: the specifier
- */
-char *getSpecifier(char *format)
-{
-	char *specifier = NULL;
-	int i;
-
-	for (i = 0; format[i] != ' ' && format[i] != '\n'; i++)
-	{
-		specifier = (char *)realloc(specifier, sizeof(char) * (i + 1));
-		specifier[i] = format[i];
-	}
-	return (specifier);
-}
-
-/**
-  * printArg - function that prints argument
-  * @specifier: the specifier to print
-  * @arglist: the list to be printed
+  * printSpecific - function that prints acording to the format
+  * @format: the format if it's 'c' or 's'
+  * @list: the va_list containing the arguments
   * Return: nothing
   */
-void printArg(char *specifier, va_list *arglist)
+void printSpecific(char format, va_list list)
 {
-	char ch;
-	if (!strcmp(specifier, "%c"))
+	switch (format)
 	{
-		/* Handle char printing here*/
-		/* puts("\nHandle printing of char");*/
-		write(1, &ch, -1);
+		case 'c':
+			_putchar(va_arg(list, int));
+			break;
+		case 's':
+			puts(va_arg(list, char *));
+			break;
 	}
 }
