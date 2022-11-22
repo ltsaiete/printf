@@ -34,20 +34,29 @@ int _printf(const char *format, ...)
 }
 
 /**
-  * printSpecific - function that prints acording to the format
-  * @format: the format if it's 'c' or 's'
-  * @list: the va_list containing the arguments
-  * Return: nothing
-  */
+ * printSpecific - function that prints acording to the format
+ * @format: the format if it's 'c' or 's'
+ * @list: the va_list containing the arguments
+ * Return: nothing
+ */
 void printSpecific(char format, va_list list)
 {
+	char *str;
+
 	switch (format)
 	{
-		case 'c':
-			_putchar(va_arg(list, int));
-			break;
-		case 's':
-			puts(va_arg(list, char *));
-			break;
+	case 'c':
+		_putchar(va_arg(list, int));
+		break;
+	case 's':
+		str = va_arg(list, char *);
+		while (*str != '\0')
+		{
+			_putchar(*str);
+			str++;
+		}
+		break;
+	default:
+		break;
 	}
 }
