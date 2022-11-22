@@ -8,7 +8,7 @@
 /**
  * _printf - prints a formatted string
  * @format: The format of the string to print
- * Return - Number of printed characters
+ * Return: Number of printed characters
  */
 
 int _printf(char *format, ...)
@@ -28,7 +28,7 @@ int _printf(char *format, ...)
 		else
 		{
 			specifier = getSpecifier(&format[count]);
-			// Handle the special character printing here
+			/*Handle the special character printing here*/
 			printArg(specifier, &arglist);
 			free(specifier);
 		}
@@ -65,7 +65,7 @@ void printArg(char *specifier, va_list *arglist)
 {
 	if (!strcmp(specifier, "%c"))
 	{
-		// Handle char printing here
-		// puts("\nHandle printing of char");
+		/* Handle char printing here*/
+		/* puts("\nHandle printing of char");*/
 	}
 }
