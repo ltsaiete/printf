@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 	va_list arglist;
-	int count = 0, i;
+	int count = 0;
 
 	va_start(arglist, format);
 	while (format[count] != '\0')
