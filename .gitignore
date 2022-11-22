@@ -1,6 +1,6 @@
 printf2.c
 # Main file in root
-./main.c
+main.c
 
 # Prerequisites
 *.d
