@@ -86,6 +86,16 @@ int printString(va_list list)
 }
 
 /**
+  * printPercentage - fun that prints %
+  * Return: 1
+  */
+int printPercentage(void)
+{
+	_putchar('%');
+	return (1);
+}
+
+/**
  * printSpecific - function that prints acording to the format
  * @format: the format if it's 'c' or 's'
  * @list: the va_list containing the arguments
@@ -104,11 +114,10 @@ int printSpecific(char format, va_list list)
 		len = printString(list);
 		break;
 	case '%':
-		_putchar('%');
-		len = 1;
+		len = printPercentage();
 		break;
 	default:
-		if (format == '\0')
+		/*if (format == '\0')
 		{
 			len = -1;
 		}
@@ -117,8 +126,8 @@ int printSpecific(char format, va_list list)
 			_putchar('%');
 			_putchar(format);
 			len = 2;
-		}
-
+		}*/
+		len = printDefault(format);
 		break;
 	}
 	return (len);

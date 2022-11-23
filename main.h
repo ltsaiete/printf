@@ -1,8 +1,10 @@
 #ifndef _main_h
 #define _main_h
 #include <stdarg.h>
+int printPercentage(void);
 int printString(va_list);
 int printChar(va_list);
+int printDefault(char);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int printSpecific(char format, va_list list);
