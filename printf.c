@@ -117,16 +117,6 @@ int printSpecific(char format, va_list list)
 		len = printPercentage();
 		break;
 	default:
-		/*if (format == '\0')
-		{
-			len = -1;
-		}
-		else
-		{
-			_putchar('%');
-			_putchar(format);
-			len = 2;
-		}*/
 		len = printDefault(format);
 		break;
 	}
