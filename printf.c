@@ -38,7 +38,6 @@ int _printf(const char *format, ...)
  */
 void printSpecific(char format, va_list list)
 {
-
 	char *str;
 
 	switch (format)
