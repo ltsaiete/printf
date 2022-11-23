@@ -11,7 +11,15 @@
 int _printf(const char *format, ...)
 {
 	va_list arglist;
-	int count = 0, length = 0;
+	int count = 0, length = 0, size;
+
+
+	if (format == NULL)
+		return (-1);
+	
+	size = strlen(format);
+	if(size <= 0)
+		return (0);
 
 	va_start(arglist, format);
 	while (format[count] != '\0')
@@ -72,6 +80,7 @@ int printSpecific(char format, va_list list)
 		}
 		else
 		{
+			len = strlen(nl);
 			while (*nl != '\0')
 			{
 				_putchar(*nl), nl++;
