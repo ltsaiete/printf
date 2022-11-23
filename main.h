@@ -6,15 +6,15 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 char *getSpecifier(char *format);
 void printArg(char *specifier, va_list *arglist);
-void printSpecific(char format, va_list list);
+int printSpecific(char format, va_list list);
 /**
-  * struct formats - structure that will hold the format
-  * @t: the type of the formater
-  * @f: the function to print the specific type
-  */
+ * struct formats - structure that will hold the format
+ * @t: the type of the formater
+ * @f: the function to print the specific type
+ */
 struct formats
 {
-	char t;
-	void (*f)(va_list);
+  char t;
+  void (*f)(va_list);
 };
 #endif
