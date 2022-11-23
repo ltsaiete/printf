@@ -66,6 +66,7 @@ int printString(va_list list)
 {
 	int len;
 	char *str, *nl = "(null)";
+
 	str = va_arg(list, char *);
 	if (str != NULL)
 	{
@@ -93,7 +94,6 @@ int printString(va_list list)
 int printSpecific(char format, va_list list)
 {
 	int len = 0;
-	/*char *str, *nl = "(null)";*/
 
 	switch (format)
 	{
@@ -101,24 +101,6 @@ int printSpecific(char format, va_list list)
 		len = printChar(list);
 		break;
 	case 's':
-		/*str = va_arg(list, char *);
-		if (str != NULL)
-		{
-			len = strlen(str);
-			while (*str != '\0')
-			{
-				_putchar(*str);
-				str++;
-			}
-		}
-		else
-		{
-			len = strlen(nl);
-			while (*nl != '\0')
-			{
-				_putchar(*nl), nl++;
-			}
-		}*/
 		len = printString(list);
 		break;
 	case '%':
