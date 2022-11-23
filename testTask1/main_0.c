@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
+#include "../main.h"
 
 /**
  * main - Entry point
@@ -13,6 +13,7 @@ int main(void)
 
 	len = _printf("%d", 1024);
 	len2 = printf("%d", 1024);
+	printf("\nLength: %d \n", len + len2);
 	fflush(stdout);
 	if (len != len2)
 	{
