@@ -8,10 +8,10 @@
  */
 int main(void)
 {
-	int len, len2;
+	int len, len2 = 0;
 
-	len = _printf("%c", 'S');
-	len2 = printf("%c", 'S');
+	len = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
+	len2 = printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0);
 	printf("Length:%d",(len + len2));
 	fflush(stdout);
 	if (len != len2)

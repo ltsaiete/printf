@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 int printSpecific(char format, va_list list)
 {
 	int len = 0;
-	char *str;
+	char *str, *nl = "(null)";
 
 	switch (format)
 	{
@@ -61,11 +61,21 @@ int printSpecific(char format, va_list list)
 		break;
 	case 's':
 		str = va_arg(list, char *);
-		len = strlen(str);
-		while (*str != '\0')
+		if (str != NULL)
 		{
-			_putchar(*str);
-			str++;
+			len = strlen(str);
+			while (*str != '\0')
+			{
+				_putchar(*str);
+				str++;
+			}
+		}
+		else
+		{
+			while (*nl != '\0')
+			{
+				_putchar(*nl), nl++;
+			}
 		}
 		break;
 	default:
