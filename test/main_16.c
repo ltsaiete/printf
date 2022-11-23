@@ -10,10 +10,8 @@ int main(void)
 {
 	int len, len2 = 0;
 
-	
 	len = _printf("%");
-	len2 = printf("%");
-	printf("\nLength: %d\n", len + len2);
+	len2 = printf("%")
 	fflush(stdout);
 	if (len != len2)
 	{
