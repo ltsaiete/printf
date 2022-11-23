@@ -33,6 +33,10 @@ int _printf(const char *format, ...)
 	}
 
 	va_end(arglist);
+
+	if (format[count - 1] != '\n')
+		_putchar('\n');
+
 	return (length);
 }
 
