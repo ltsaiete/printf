@@ -1,4 +1,4 @@
-#include "main.h"
+#include "../main.h"
 
 int main(void)
 {
@@ -11,9 +11,10 @@ int main(void)
 	j = 'L';
 	k = 'O';
 
+	_printf("Let's print a simple sentence.\n");
 
-	_printf("Printing a char: %c, %c, %c, %c, %c\n", c, h, i, j, k);
-	_printf("Printing a string: %s\n", s);
-	_printf("Print nothing %s\n");
+	// _printf("Printing a char: %c, %c, %c, %c, %c\n", c, h, i, j, k);
+	// _printf("Printing a string: %s\n", s);
+	// _printf("Print nothing %s\n");
 	return (0);
 }
