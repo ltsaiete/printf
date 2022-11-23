@@ -1,7 +1,7 @@
 #ifndef _main_h
 #define _main_h
 #include <stdarg.h>
-void printChar(va_list);
+int printChar(va_list);
 int _putchar(char c);
 int _printf(const char *format, ...);
 char *getSpecifier(char *format);

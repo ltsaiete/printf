@@ -33,33 +33,29 @@ int _printf(const char *format, ...)
 			count++;
 			if (format[count] || size == 1)
 			{
-
 				specLen = printSpecific(format[count], arglist);
 				if (specLen == -1)
-				{
 					return (-1);
-				}
-				else
-				{
-					length += specLen;
-				}
+				length += specLen;
 			}
 			else
-			{
 				return (length);
-			}
 		}
 		count++;
 	}
-
 	va_end(arglist);
-
-	/**
-	 * if (format[count - 1] != '\n')
-	 *	_putchar('\n');
-	 */
-
 	return (length);
+}
+
+/**
+  * printChar - function that prints 1 char
+  * @list: the list of arguments
+  * Return: size of the char = 1
+  */
+int printChar(va_list list)
+{
+	_putchar(va_arg(list, int));
+	return (1);
 }
 
 /**
@@ -76,8 +72,9 @@ int printSpecific(char format, va_list list)
 	switch (format)
 	{
 	case 'c':
-		_putchar(va_arg(list, int));
-		len = 1;
+		/*_putchar(va_arg(list, int));
+		len = 1;*/
+		len = printChar(list);
 		break;
 	case 's':
 		str = va_arg(list, char *);
