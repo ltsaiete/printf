@@ -116,6 +116,9 @@ int printSpecific(char format, va_list list)
 	case 'd':
 		len = printDec(list);
 		break;
+	case 'i':
+		len = printDec(list);
+		break;
 	case '%':
 		len = printPercentage();
 		break;
