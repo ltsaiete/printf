@@ -11,8 +11,7 @@
 int _printf(const char *format, ...)
 {
 	va_list arglist;
-	int count = 0, length = 0, size;
-
+	int count = 0, length = 0, size, specLen;
 
 	if (format == NULL)
 		return (-1);
@@ -32,9 +31,21 @@ int _printf(const char *format, ...)
 		else
 		{
 			count++;
-			if (format[count])
+			if (format[count] || size == 1)
 			{
-				length += printSpecific(format[count], arglist);
+				specLen = printSpecific(format[count], arglist);
+				if (specLen == -1)
+				{
+					return (-1);
+				}
+				else
+				{
+					length += -1;
+				}
+			}
+			else
+			{
+				return (length);
 			}
 		}
 		count++;
@@ -92,6 +103,7 @@ int printSpecific(char format, va_list list)
 		len = 1;
 		break;
 	default:
+		len = -1;
 		break;
 	}
 	return (len);
