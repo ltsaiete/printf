@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 				}
 				else
 				{
-					length += -1;
+					length += specLen;
 				}
 			}
 			else
