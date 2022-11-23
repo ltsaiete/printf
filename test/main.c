@@ -2,26 +2,18 @@
 #include <stdlib.h>
 #include "../main.h"
 
+/**
+ * main - Entry point
+ *
+ * Return: 0 on success, error code otherwise
+ */
 int main(void)
 {
-	// char c, h, i, j, k;
-	// char *s = "Exemplo";
-
-	// c = 'H';
-	// h = 'E';
-	// i = 'L';
-	// j = 'L';
-	// k = 'O';
-	// _printf("Let's print a simple sentence.\n");
-	// // _printf("Printing a char: %c, %c, %c, %c, %c\n", c, h, i, j, k);
-	// // _printf("Printing a string: %s\n", s);
-	// // _printf("Print nothing %s\n");
-	// return (0);
-
 	int len, len2;
 
-	len = _printf("Let's print a simple sentence.\n");
-	len2 = printf("Let's print a simple sentence.\n");
+	len = _printf("%c", 'S');
+	len2 = printf("%c", 'S');
+	printf("Length: %d\n", (len + len2));
 	fflush(stdout);
 	if (len != len2)
 	{
