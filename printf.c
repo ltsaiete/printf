@@ -33,6 +33,7 @@ int _printf(const char *format, ...)
 			count++;
 			if (format[count] || size == 1)
 			{
+
 				specLen = printSpecific(format[count], arglist);
 				if (specLen == -1)
 				{
@@ -103,7 +104,17 @@ int printSpecific(char format, va_list list)
 		len = 1;
 		break;
 	default:
-		len = -1;
+		if (format == '\0')
+		{
+			len = -1;
+		}
+		else
+		{
+			_putchar('%');
+			_putchar(format);
+			len = 2;
+		}
+
 		break;
 	}
 	return (len);

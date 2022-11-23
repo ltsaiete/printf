@@ -12,7 +12,7 @@ int main(void)
 
 	len = _printf("%!\n");
 	len2 = printf("%!\n");
-	printf("\nLength: %d\n", len + len2);
+	printf("\nLength: %d\n", len2);
 	fflush(stdout);
 	if (len != len2)
 	{
