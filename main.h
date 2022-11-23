@@ -14,7 +14,7 @@ int printSpecific(char format, va_list list);
  */
 struct formats
 {
-  char t;
-  void (*f)(va_list);
+	char t;
+	void (*f)(va_list);
 };
 #endif

@@ -2,7 +2,7 @@
 #include <stdarg.h>
 #include <stddef.h>
 #include <string.h>
-
+#include <stdlib.h>
 /**
  * _printf - prints a formatted string
  * @format: The format of the string to print
