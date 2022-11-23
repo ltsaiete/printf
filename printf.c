@@ -35,8 +35,8 @@ int _printf(const char *format, ...)
 	va_end(arglist);
 
 	/**
-	  * if (format[count - 1] != '\n')
-	  *	_putchar('\n');
+	 * if (format[count - 1] != '\n')
+	 *	_putchar('\n');
 	 */
 
 	return (length);
@@ -77,6 +77,10 @@ int printSpecific(char format, va_list list)
 				_putchar(*nl), nl++;
 			}
 		}
+		break;
+	case '%':
+		_putchar('%');
+		len = 1;
 		break;
 	default:
 		break;
