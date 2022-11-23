@@ -57,6 +57,32 @@ int printChar(va_list list)
 	_putchar(va_arg(list, int));
 	return (1);
 }
+/**
+  * printString - function that prints a String
+  * @list: the list of arguments
+  * Return: the length of the string
+  */
+int printString(va_list list)
+{
+	int len;
+	char *str, *nl = "(null)";
+	str = va_arg(list, char *);
+	if (str != NULL)
+	{
+		len = strlen(str);
+		while (*str != '\0')
+		{
+			_putchar(*str), str++;
+		}
+	}
+	else
+	{
+		len = strlen(nl);
+		while (*nl != '\0')
+			_putchar(*nl), nl++;
+	}
+	return (len);
+}
 
 /**
  * printSpecific - function that prints acording to the format
@@ -67,17 +93,15 @@ int printChar(va_list list)
 int printSpecific(char format, va_list list)
 {
 	int len = 0;
-	char *str, *nl = "(null)";
+	/*char *str, *nl = "(null)";*/
 
 	switch (format)
 	{
 	case 'c':
-		/*_putchar(va_arg(list, int));
-		len = 1;*/
 		len = printChar(list);
 		break;
 	case 's':
-		str = va_arg(list, char *);
+		/*str = va_arg(list, char *);
 		if (str != NULL)
 		{
 			len = strlen(str);
@@ -94,7 +118,8 @@ int printSpecific(char format, va_list list)
 			{
 				_putchar(*nl), nl++;
 			}
-		}
+		}*/
+		len = printString(list);
 		break;
 	case '%':
 		_putchar('%');
