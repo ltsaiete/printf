@@ -10,6 +10,7 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 int printSpecific(char format, va_list list);
 char *itoa(long int num, int base);
+int printBin(va_list list);
 /**
  * struct formats - structure that will hold the format
  * @t: the type of the formater

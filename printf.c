@@ -48,20 +48,20 @@ int _printf(const char *format, ...)
 }
 
 /**
-  * printChar - function that prints 1 char
-  * @list: the list of arguments
-  * Return: size of the char = 1
-  */
+ * printChar - function that prints 1 char
+ * @list: the list of arguments
+ * Return: size of the char = 1
+ */
 int printChar(va_list list)
 {
 	_putchar(va_arg(list, int));
 	return (1);
 }
 /**
-  * printString - function that prints a String
-  * @list: the list of arguments
-  * Return: the length of the string
-  */
+ * printString - function that prints a String
+ * @list: the list of arguments
+ * Return: the length of the string
+ */
 int printString(va_list list)
 {
 	int len;
@@ -86,9 +86,9 @@ int printString(va_list list)
 }
 
 /**
-  * printPercentage - fun that prints %
-  * Return: 1
-  */
+ * printPercentage - fun that prints %
+ * Return: 1
+ */
 int printPercentage(void)
 {
 	_putchar('%');
@@ -118,6 +118,9 @@ int printSpecific(char format, va_list list)
 		break;
 	case 'i':
 		len = printDec(list);
+		break;
+	case 'b':
+		len = printBin(list);
 		break;
 	case '%':
 		len = printPercentage();
