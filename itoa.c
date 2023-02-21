@@ -13,6 +13,7 @@ char *itoa(long int num, int base)
 	static char buffer[50];
 	char sign = 0;
 	char *ptr;
+	int count = 0;
 	unsigned long n = num;
 
 	if (num < 0)
@@ -23,12 +24,27 @@ char *itoa(long int num, int base)
 	ptr = &buffer[49];
 	*ptr = '\0';
 
-	do      {
+	do
+	{
 		*--ptr = array[n % base];
 		n /= base;
+		count++;
 	} while (n != 0);
 
 	if (sign)
-		*--ptr = sign;
+	{
+		if (base == 10)
+		{
+			*--ptr = sign;
+		}
+		else if (base == 2)
+		{
+			while (count < 32)
+			{
+				*--ptr = '1';
+				count++;
+			}
+		}
+	}
 	return (ptr);
 }
