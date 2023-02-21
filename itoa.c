@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * itoa - integer to ascii
  * @num: num
@@ -20,6 +21,8 @@ char *itoa(long int num, int base)
 	{
 		n = -num;
 		sign = '-';
+		if (base == 8)
+			n--;
 	}
 	ptr = &buffer[49];
 	*ptr = '\0';
@@ -43,6 +46,15 @@ char *itoa(long int num, int base)
 			{
 				*--ptr = '1';
 				count++;
+			}
+		}
+		else if (base == 8)
+		{
+			while (count > 0)
+			{
+				ptr[count - 1] = (7 - ((int)ptr[count - 1] - 48)) + '0';
+
+				count--;
 			}
 		}
 	}

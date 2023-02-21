@@ -1,6 +1,7 @@
 #ifndef _main_h
 #define _main_h
 #include <stdarg.h>
+#include <stdlib.h>
 int printPercentage(void);
 int printString(va_list);
 int printChar(va_list);
