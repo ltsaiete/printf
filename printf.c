@@ -113,6 +113,9 @@ int printSpecific(char format, va_list list)
 	case 's':
 		len = printString(list);
 		break;
+	case 'S':
+		len = printString(list);
+		break;
 	case 'd':
 		len = printDec(list);
 		break;
